@@ -1,6 +1,7 @@
-import { recipeHome } from "./recipeHome";
-import { indivRecipe } from "./indivRecipe";
-import { shopList } from "./shopList";
-import { recipeList } from "./recipeList";
+import { RecipeHome } from "./recipeHome";
+import { IndivRecipe } from "./indivRecipe";
+import { ShopList } from "./shopList";
+import { RecipeList } from "./recipeList";
+import { RecipeTile } from "./recipeTile";
 
-export { recipeHome, indivRecipe, shopList, recipeList};
+export { RecipeHome, IndivRecipe, ShopList, RecipeList, RecipeTile};
