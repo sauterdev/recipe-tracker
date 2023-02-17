@@ -45,14 +45,23 @@ export function ShopList(
     }
 
     return (
-        <div>
-            <h1>Shopping List</h1>
-            <ol>
+        <div className="flex flex-col items-center p-10 h-full">
+            <div className="h-20 mt-10">
+            <h1 className="text-3xl underline text-center">Shopping List</h1>
+            </div>
+            <ol className="flex flex-col gap-10 ">
                 {ingredientList.map((ele, index) => {
                     return (
-                        <li key={index}>
-                            <p>{ele.quantity}, {ele.unit}, {ele.ingredient}</p>
-                        <button onClick={()=>{removeIngredient(index)}}>Already Have Ingredient</button>
+                        <li
+                        className="flex justify-between gap-20"
+                        key={index}>
+                            {/* ternaries and filters to remove non-descript ingredient terms */}
+                            <p>{ (ele.quantity == 0 || ele.quantity == "q.b." ? "" : ele.quantity + " ")}
+                            {(ele.unit == "q.b." ? "" : ele.unit)}
+                             {" " + (ele.ingredient.replace("<unit>", " ").replace("null", ""))}</p>
+                        <button
+                        className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded m-2"
+                         onClick={()=>{removeIngredient(index)}}>Remove</button>
                         </li>
                     )
                 })}
